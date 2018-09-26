@@ -5,8 +5,10 @@
 
 docker build -t friendlyname .              # Create image using this directory's Dockerfile
 docker run -p 4000:80 friendlyname          # Run "friendlyname" mapping port 4000 to 80
-docker run -d -p 4000:80 friendlyname       # Same thing, but in detached mode
-docker exec -it [container-id] bash         # Enter a running container
+docker run -d -p 4000:80 friendlyname       # Same thing, but in detached mode,When you run an image with only -d option,
+                                            # the container will exit immediately after the command executed.
+docker exec -it [container-id] bash         # Enter a running container, If you run with -itd option, the container will be detached
+                                            # but running in background, and you can attach back when you need
 docker ps                                   # See a list of all running containers
 docker stop <hash>                          # Gracefully stop the specified container
 docker ps -a                                # See a list of all containers, even the ones not running
